@@ -9,12 +9,15 @@
 | 主题 | 主色 | 适用场景 | 组件库文件 | 正文下划线 CSS |
 |------|------|---------|-----------|---------------|
 | 词员外·现代水墨（默认） | 墨 `#2B2B28` + 朱砂 `#C0392B` | AI、方法论、行业观察、知识整理、经验复盘与大众内容 | `references/theme-ciyuanwai.md` | `border-bottom:2px solid #D98B7F;font-weight:600;` |
+| 凯冰·明亮编辑（主 IP） | 编辑蓝 `#2768B2` + 明黄 `#F3D55B` + 纸白 `#FFFCF5` + 红 `#C94E4C` | AI 工作流、方法论、创作记录、个人思考；语义大字与宋体编辑排版 | `references/theme-kevinbee-editorial.md` | `text-decoration:underline;text-decoration-color:#2768B2;text-underline-offset:4px;` |
 | 橄榄手记（定制母版） | 墨黑 `#1e1f23` + 橙 `#ed7b2f` | 内刊、深度评测、案例复盘；组件完整，适合作为新主题的定制参考 | `references/theme-olive-journal.md` | `border-bottom:2px solid #ed7b2f;font-weight:600;` |
 
 ## 选择建议
 
 - 用户说“词员外风格”“现代水墨”“默认风格”时，直接使用第一行主题，不追问。
-- 用户说“橄榄手记”“编辑手记母版”“定制母版”时，使用第二行主题。
+- 用户说“凯冰风格”“凯冰内容风格”“明亮编辑”“清新编辑”“留白叙事”“主 IP 风格”时，使用 `theme-kevinbee-editorial.md`。
+- 旧版“静动叙事”和其他候选已归档在工作区的 `归档/凯冰旧方案/`，不再作为可选主题；明确要求回看旧版时读取归档文件。
+- 用户说“橄榄手记”“编辑手记母版”“定制母版”时，使用 `theme-olive-journal.md`。
 - 用户没有指定主题时，默认使用第一行的词员外主题；只有用户明确要看其它风格时才展示母版或进入主题生成流程。
 - 同一篇文章只用一套主题，不混搭。
 

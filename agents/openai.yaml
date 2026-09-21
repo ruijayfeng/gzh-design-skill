@@ -1,6 +1,6 @@
 interface:
   display_name: "词员外公众号排版"
-  short_description: "不改写内容，套用词员外或编辑手记风格生成公众号 HTML"
+  short_description: "不改写内容，套用词员外、凯冰或编辑手记风格生成公众号 HTML"
   brand_color: "#C0392B"
   default_prompt: "Use $gzh-design to format this article with the 词员外 style without rewriting its content."
 

@@ -14,16 +14,23 @@
 用橄榄手记风格排版这篇文章：article.md
 ```
 
+使用凯冰主 IP 风格：
+
+```text
+用凯冰风格排版这篇文章：article.md
+```
+
 如果文章正文已经在对话中，只要说“用词员外风格排版”即可。
 
-## 两套主题
+## 三套主题
 
 | 主题 | 定位 | 用途 |
 |---|---|---|
 | **词员外·现代水墨**（默认） | 暖白宣纸、墨色细线、朱砂点睛、现代中文 | 日常发布；AI、方法论、行业观察、知识整理、经验复盘 |
+| **凯冰·明亮编辑**（主 IP） | 语义大字、宋体标题、纸白、明黄标记与蓝色引文 | AI 工作流、方法论、创作记录、个人思考 |
 | **橄榄手记**（定制母版） | 编辑部内刊质感、组件类型完整、结构变化丰富 | 需要另一套成品风格时直接使用，或作为后续主题定制参考 |
 
-完整预览位于 [`docs/gallery/index.html`](docs/gallery/index.html)。
+完整预览位于 [`docs/gallery/index.html`](docs/gallery/index.html)。凯冰真实文章排版样张位于 [`docs/kevinbee-final/凯冰_排版预览.html`](docs/kevinbee-final/凯冰_排版预览.html)，可直接查看并复制富文本。
 
 ## 排版边界
 
@@ -42,7 +49,7 @@
 - 生成、修改或裁切图片；
 - 为了展示组件而添加原文没有的内容。
 
-允许新增的文字只有“左右滑动查看”“上下滑动查看”等纯操作提示。
+允许新增“左右滑动查看”“上下滑动查看”等纯操作提示。凯冰主题还允许用户已要求的章节语义词，必须准确对应原章节，完整保留原题，不引入新观点。
 
 ## 输出与发布
 
@@ -76,6 +83,7 @@ gzh-design-skill/
 ├── references/
 │   ├── theme-index.md
 │   ├── theme-ciyuanwai.md
+│   ├── theme-kevinbee-editorial.md
 │   ├── theme-olive-journal.md
 │   ├── common-components.md
 │   ├── format-normalize.md
@@ -104,7 +112,10 @@ python3 scripts/validate_gzh_html.py 生成的正文.html
 
 词员外主题使用的示例插图来自 [ruijayfeng/ciyuanwai-illustrations](https://github.com/ruijayfeng/ciyuanwai-illustrations)。
 
+凯冰·明亮编辑参考阿真原版的语义大字、宋体层级和明亮阅读节奏，采用内容驱动的章节词与蓝色引文。凯冰形象图只作风格参考，禁止放进模板、预览或自动插入文章。旧候选和参考稿集中保存在工作区 `归档/凯冰旧方案/`，不进入正式主题路由。
+
+运行 `node scripts/build_kevinbee_editorial.mjs` 可从现有示例文章重建项目级样张和仓库内 `docs/kevinbee-final/` 的发布副本。脚本校验原文字序，仅用于此样张，不是通用Markdown转换器。
+
 ## License
 
 AGPL-3.0，详见 [LICENSE](LICENSE)。
-
