@@ -13,4 +13,9 @@ BAD_IMAGE = GOOD.replace("images/result.png", "images/other.png")
 assert not verify(SOURCE, GOOD)[0]
 assert verify(SOURCE, BAD_TEXT)[0]
 assert verify(SOURCE, BAD_IMAGE)[0]
+for separator in ("---", "***", "___", "- - -", "  * * *"):
+    separated = f"前段\n\n{separator}\n\n后段"
+    assert not verify(separated, "<section>前段后段</section>")[0]
+assert verify("```\n---\n```", "<section></section>")[0]
+assert not verify("```\n---\n```", "<section>---</section>")[0]
 print("verify_content tests passed")

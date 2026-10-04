@@ -10,6 +10,7 @@ import sys
 IMAGE = re.compile(r"!\[([^\]]*)\]\(([^)]+)\)")
 LINK = re.compile(r"(?<!!)\[([^\]]+)\]\(([^)]+)\)")
 TABLE_RULE = re.compile(r"^\s*\|?(?:\s*:?-+:?\s*\|)+\s*:?-+:?\s*\|?\s*$")
+THEMATIC_RULE = re.compile(r"^ {0,3}(?:(?:-[ \t]*){3,}|(?:\*[ \t]*){3,}|(?:_[ \t]*){3,})$")
 
 
 def normalize(value: str) -> str:
@@ -38,6 +39,8 @@ def source_fragments(markdown: str) -> list[str]:
             in_fence = not in_fence
             continue
         if not in_fence and TABLE_RULE.match(line):
+            continue
+        if not in_fence and THEMATIC_RULE.match(line):
             continue
         plain = plain_markdown(line)
         if plain:
