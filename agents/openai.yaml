@@ -1,8 +1,8 @@
 interface:
-  display_name: "词员外公众号排版"
-  short_description: "不改写内容，套用词员外、凯冰或编辑手记风格生成公众号 HTML"
-  brand_color: "#C0392B"
-  default_prompt: "Use $gzh-design to format this article with the 词员外 style without rewriting its content."
+  display_name: "凯冰公众号排版"
+  short_description: "不改写原文，用凯冰原生正文版或橄榄手记生成可复制的公众号排版"
+  brand_color: "#2659DE"
+  default_prompt: "Use $gzh-design to format this article with the 凯冰·紧凑承接（原生正文版） style without rewriting its content."
 
 policy:
   allow_implicit_invocation: true

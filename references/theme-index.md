@@ -1,34 +1,18 @@
-# 主题索引与选择决策表
+# 主题索引
 
-本表是主题信息的**单一来源**。工作流第 1 步据此向用户展示选项，第 2 步据"组件库文件"列读取对应库，下划线标记时据"正文下划线 CSS"列取值。
-
-每个主题的**英文标识**（用于产物命名 `{中文名}({标识}).html`、Agent 引用）= "组件库文件"列去掉 `theme-` 前缀与 `.md` 后缀。展示给用户仍用中文名。
-
-## 已注册主题
+本文件是可用主题及路由的唯一来源。当前仅保留两套正式主题；没有指定主题时使用凯冰。
 
 | 主题 | 主色 | 适用场景 | 组件库文件 | 正文下划线 CSS |
-|------|------|---------|-----------|---------------|
-| 词员外·现代水墨（默认） | 墨 `#2B2B28` + 朱砂 `#C0392B` | AI、方法论、行业观察、知识整理、经验复盘与大众内容 | `references/theme-ciyuanwai.md` | `border-bottom:2px solid #D98B7F;font-weight:600;` |
-| 凯冰·明亮编辑（主 IP） | 编辑蓝 `#2768B2` + 明黄 `#F3D55B` + 纸白 `#FFFCF5` + 红 `#C94E4C` | AI 工作流、方法论、创作记录、个人思考；语义大字与宋体编辑排版 | `references/theme-kevinbee-editorial.md` | `text-decoration:underline;text-decoration-color:#2768B2;text-underline-offset:4px;` |
-| 橄榄手记（定制母版） | 墨黑 `#1e1f23` + 橙 `#ed7b2f` | 内刊、深度评测、案例复盘；组件完整，适合作为新主题的定制参考 | `references/theme-olive-journal.md` | `border-bottom:2px solid #ed7b2f;font-weight:600;` |
+|---|---|---|---|---|
+| 凯冰·紧凑承接（原生正文版，默认） | 编辑蓝 #2659DE + 浅黄 #FFF1BE | AI 工作流、个人思考、方法教程、图文案例；原生正文加局部增强 | `references/theme-kevinbee-compact.md` | `text-decoration:underline;text-decoration-color:#2659DE;text-underline-offset:3px;` |
+| 橄榄手记 | 墨黑 #1e1f23 + 橙 #ed7b2f | 内刊、深度评测、系统说明与案例复盘 | `references/theme-olive-journal.md` | `border-bottom:2px solid #ed7b2f;font-weight:600;color:#23251d;` |
 
-## 选择建议
+## 路由
 
-- 用户说“词员外风格”“现代水墨”“默认风格”时，直接使用第一行主题，不追问。
-- 用户说“凯冰风格”“凯冰内容风格”“明亮编辑”“清新编辑”“留白叙事”“主 IP 风格”时，使用 `theme-kevinbee-editorial.md`。
-- 旧版“静动叙事”和其他候选已归档在工作区的 `归档/凯冰旧方案/`，不再作为可选主题；明确要求回看旧版时读取归档文件。
-- 用户说“橄榄手记”“编辑手记母版”“定制母版”时，使用 `theme-olive-journal.md`。
-- 用户没有指定主题时，默认使用第一行的词员外主题；只有用户明确要看其它风格时才展示母版或进入主题生成流程。
-- 同一篇文章只用一套主题，不混搭。
+- “凯冰”“紧凑承接”“原生正文版”“主 IP 风格”“默认风格” → `theme-kevinbee-compact.md`。
+- “橄榄手记”“编辑手记母版”“定制母版” → `theme-olive-journal.md`。
+- 未指定主题 → 凯冰，不询问。
+- 请求索引之外的旧主题时，说明当前仅有以上两套，不能默默改用其他主题或重建旧文件。
+- 新主题只在用户确认后登记。历史资料仅保存在 Git，日常入口与主题目录不展示旧版。
 
-## 下划线色值的权威性
-
-正文关键词下划线一律用上表"正文下划线 CSS"列的值。组件库里可能有浅色下划线变体，那是可选样式；**正文关键词标记以本表为单一权威来源**，避免双轨。
-
-## 新主题登记流程
-
-1. 把主题组件库写入 `references/theme-{英文标识}.md`（格式要求见 SKILL.md「添加新主题的规范」）。
-2. 在上表登记一行；首个/最常用主题放第一行作为默认推荐。
-3. 跑 `python3 scripts/component_lint.py .` 确认 0 ERROR。
-
-> 用户想要全新风格时，可走 `references/theme-generator.md` 的自定义主题生成流程：按偏好/参考图生成区块库（预览存 `assets/theme-previews/`），确认后转标准主题库并按上面流程登记。
+主题英文标识取组件库文件名去掉 `theme-` 与 `.md`。先读所选主题库，再读通用增量库；主题库同语义组件及其用户明确规则优先于通用默认。
